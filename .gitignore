@@ -1,0 +1,20 @@
+.gradle/
+.idea/
+.omx/
+build/
+local.properties
+*.iml
+
+# macOS metadata.
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+
+app/build/
+captures/
+externalNativeBuild/
+.cxx/
+
+# Local reference clones used during research.
+reference-facenet/

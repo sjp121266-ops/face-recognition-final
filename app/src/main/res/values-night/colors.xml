@@ -1,0 +1,52 @@
+<resources>
+    <color name="brand_primary">#5B9BF5</color>
+    <color name="brand_primary_variant">#2A4A8A</color>
+    <color name="brand_secondary">#1DC4B3</color>
+    <color name="brand_accent">#F06B7E</color>
+
+    <color name="screen_background">#0D1117</color>
+    <color name="card_background">#161B22</color>
+    <color name="border_default">#21262D</color>
+    <color name="border_strong">#30363D</color>
+
+    <color name="text_primary">#E6EDF3</color>
+    <color name="text_secondary">#8B949E</color>
+    <color name="text_muted">#6E7681</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <color name="status_info_bg">#0D2B42</color>
+    <color name="status_info_text">#79C0FF</color>
+    <color name="status_info_border">#1A4A72</color>
+    <color name="flow_background">#2A2410</color>
+    <color name="flow_border">#5A4818</color>
+    <color name="result_background">#0D1F1A</color>
+    <color name="result_border">#1A4A3A</color>
+    <color name="field_background">#0D1117</color>
+    <color name="field_border">#30363D</color>
+    <color name="panel_ripple">#282563EB</color>
+    <color name="overlay_scrim">#D9000000</color>
+    <color name="overlay_border">#33FFFFFF</color>
+
+    <color name="cute_yellow">#D4B040</color>
+    <color name="cute_mint">#1A3A32</color>
+    <color name="cute_lilac">#201A3A</color>
+    <color name="cute_cream_inner">#1A1810</color>
+    <color name="cute_step_idle">#151A28</color>
+    <color name="cute_step_idle_border">#2A3050</color>
+    <color name="cute_step_track">#2A3040</color>
+    <color name="cute_action_enroll">#0D1F1A</color>
+    <color name="cute_action_recognize">#0D1528</color>
+    <color name="cute_action_live">#180D28</color>
+    <color name="cute_lilac_dark">#8B85D8</color>
+    <color name="cute_mint_border">#2A5A4A</color>
+
+    <color name="teal_soft">#1A3A32</color>
+    <color name="teal_dark">#5AE0D0</color>
+
+    <color name="danger_soft">#3A1518</color>
+    <color name="danger_dark">#F07A88</color>
+    <color name="quiet_soft">#1A1C20</color>
+    <color name="quiet_dark">#B0B8C8</color>
+
+    <color name="ic_launcher_background">#0D1117</color>
+</resources>

@@ -1,0 +1,146 @@
+<resources>
+    <string name="app_name">人脸识别期末作业</string>
+
+    <!-- Layout strings -->
+    <string name="title_main">人脸识别演示台</string>
+    <string name="subtitle_main">FaceNet + VP-Tree 离线人脸识别 | 期末答辩演示系统</string>
+    <string name="title_settings">设置与材料</string>
+    <string name="subtitle_settings">云端对比、识别记录、报告素材和数据管理都在这里。</string>
+    <string name="demo_step_enroll">录入样本</string>
+    <string name="demo_step_recognize">拍照识别</string>
+    <string name="demo_step_live">多人视频</string>
+    <string name="demo_step_summary">生成摘要</string>
+    <string name="camera_guide">请把人脸放在取景框中间，光线越稳定，结果越可靠。</string>
+    <string name="library_summary_default">👤 人脸库为空\n💡 请输入姓名后点击 📸录入 按钮开始</string>
+    <string name="section_actions">开始演示</string>
+    <string name="section_actions_hint">先录入 3 组样本，再开始识别；识别时不用输入姓名。</string>
+    <string name="next_step_default">下一步：输入姓名，点击“录入样本”。</string>
+    <string name="section_mode">演示模式</string>
+    <string name="mode_local">本机演示（推荐）</string>
+    <string name="mode_cloud">云端对比</string>
+    <string name="btn_open_settings">材料</string>
+    <string name="btn_back_to_main">返回人脸识别</string>
+    <string name="cloud_config_hint">高级设置：不想部署服务端时优先选择 Face++；CompreFace 需要自己先启动 Docker 服务。普通答辩可一直使用本机演示。</string>
+    <string name="cloud_provider_facepp">Face++ 托管云端</string>
+    <string name="cloud_provider_compreface">CompreFace 自部署</string>
+    <string name="cloud_base_url_hint">云端服务地址，例如：http://10.0.2.2:8000</string>
+    <string name="cloud_facepp_base_url_hint">Face++ API 地址，例如：https://api-us.faceplusplus.com</string>
+    <string name="cloud_api_key_hint">API Key</string>
+    <string name="cloud_facepp_api_key_hint">Face++ API Key</string>
+    <string name="cloud_compreface_api_key_hint">CompreFace Recognition API Key</string>
+    <string name="cloud_api_secret_hint">Face++ API Secret</string>
+    <string name="cloud_faceset_hint">Face++ FaceSet outer_id，例如：final_project_faces</string>
+    <string name="btn_cloud_test">测试云端连接</string>
+    <string name="cloud_connection_status_default">云端状态：尚未测试连接\n建议：优先选择 Face++，填写 API Key 后点击“测试云端连接”。</string>
+    <string name="section_status">识别结果与提示</string>
+    <string name="section_enroll">录入人脸</string>
+    <string name="input_name_label">人员姓名</string>
+    <string name="hint_name">输入姓名，例如：张三</string>
+    <string name="btn_enroll">录入样本</string>
+    <string name="btn_clear_profiles">清空本机人脸库</string>
+    <string name="btn_delete_person">删除</string>
+    <string name="section_recognize">开始识别</string>
+    <string name="btn_recognize">拍照识别</string>
+    <string name="btn_live_recognition">多人视频</string>
+    <string name="btn_live_recognition_stop">停止演示</string>
+    <string name="btn_live_fullscreen_exit">退出全屏演示</string>
+    <string name="fullscreen_live_title">多人视频演示中\n保持两张以上人脸稳定入镜，等待跨帧确认。</string>
+    <string name="fullscreen_live_result_default">正在等待画面中的人脸进入识别区域。</string>
+    <string name="status_default">👋 欢迎使用人脸识别演示台\n💡 长按标题开启演示模式 | 输入姓名后点击📸录入</string>
+    <string name="section_records">识别记录</string>
+    <string name="section_records_hint">用于答辩截图、录屏和测试摘要，最近记录会保存在本机。</string>
+    <string name="btn_test_summary">生成截图摘要</string>
+    <string name="btn_copy_summary">复制完整报告</string>
+    <string name="btn_clear_records">清空记录</string>
+    <string name="summary_empty">截图摘要尚未生成。完成一次成功识别和一次未知人员识别后再生成，更适合放进报告。</string>
+    <string name="records_empty">暂无识别记录。完成录入后，先做一次拍照识别。</string>
+    <string name="section_management">数据管理</string>
+    <string name="section_management_hint">答辩前一般不用操作；这里只管理本机保存的数据。</string>
+    <string name="person_spinner_empty">暂无已录入人员</string>
+
+    <!-- Status messages -->
+    <string name="status_camera_denied">状态：相机权限被拒绝，请在系统设置中允许相机权限。</string>
+    <string name="status_model_load_failed">状态：FaceNet 模型加载失败，请确认 assets/facenet.tflite 存在。\n原因：%s</string>
+    <string name="status_loaded">状态：已载入 %d 个已录入人员，可以开始录入或识别。</string>
+    <string name="status_camera_not_ready">状态：相机还没有准备好，请稍等。</string>
+    <string name="status_no_front_camera">状态：未找到前置摄像头，已自动切换到后置摄像头。</string>
+    <string name="status_camera_failed">状态：相机启动失败，请检查设备摄像头。\n原因：%s</string>
+    <string name="status_name_required">状态：请先输入要录入的姓名。</string>
+    <string name="status_enrolling">正在录入 %s …</string>
+    <string name="status_enroll_success">状态：录入成功。%1$s 当前保存 %2$d 组人脸特征。\n建议：%3$s</string>
+    <string name="status_enroll_outlier">状态：本次照片和“%s”已保存样本差距过大，已拒绝加入人脸库。\n建议：请确认姓名是否正确，并正对摄像头重新录入。</string>
+    <string name="status_enroll_invalid_embedding">状态：%s 的人脸特征提取结果异常，已拒绝加入人脸库。\n建议：请保持正脸、光线稳定后重新录入。</string>
+    <string name="status_enroll_failed">状态：%s 录入失败，数据保存异常。\n建议：请重试。</string>
+    <string name="status_no_profiles">状态：还没有录入人员，请先录入至少 1 个人。</string>
+    <string name="status_recognizing">正在识别 …</string>
+    <string name="status_cloud_config_required">状态：请先填写当前云端提供商所需的服务地址、API Key 和密钥信息。</string>
+    <string name="status_mode_local">状态：已切换到本机演示模式。无需网络，适合现场答辩。</string>
+    <string name="status_mode_cloud">状态：已切换到云端对比模式。需要先填写 API 信息，普通演示可切回本机模式。</string>
+    <string name="status_cloud_testing">正在测试云端 API 连接 …</string>
+    <string name="status_cloud_test_success">状态：云端连接成功。\n说明：%s</string>
+    <string name="status_cloud_enrolling">正在上传到云端人脸库：%s …</string>
+    <string name="status_cloud_enroll_success">状态：云端录入成功。%s 已保存到云端人脸库。\n建议：云端模式和本地模式可分别演示，对比离线识别与线上 REST API。</string>
+    <string name="status_cloud_recognizing">正在调用云端 API 识别 …</string>
+    <string name="status_cloud_success">结论：云端识别成功\n姓名：%1$s\n相似度：%2$s\n说明：%3$s</string>
+    <string name="status_cloud_unknown">结论：云端未匹配到已录入人员\n最高相似度：%1$s\n说明：%2$s</string>
+    <string name="status_cloud_failed">状态：云端 API 调用失败。\n原因：%s</string>
+    <string name="status_live_started">结论：全屏多人视频演示已开启\n说明：系统会持续分析预览画面中的多张人脸，通过跨帧投票和平滑显示减少单帧误判。</string>
+    <string name="status_live_stopped">结论：多人视频演示已关闭。可以继续使用拍照录入或单人拍照识别。</string>
+    <string name="status_live_no_face">视频多人识别中\n当前画面未检测到人脸。</string>
+    <string name="status_live_result">结论：多人视频演示中\n检测到 %1$d 张人脸\n%2$s</string>
+    <string name="status_recognize_success">结论：识别成功\n姓名：%1$s\n相似度：%2$s\nL2 距离：%3$s\n说明：%4$s</string>
+    <string name="status_unknown">结论：未识别到已录入人员\n最近 L2 距离：%1$s\n阈值：%2$s\n说明：%3$s</string>
+    <string name="status_no_face">状态：未检测到人脸，请正对摄像头后重试。</string>
+    <string name="status_multi_face">状态：检测到多张人脸，请保持画面中只有一张人脸。</string>
+    <string name="status_face_quality_blocked">状态：人脸质量暂不适合录入/识别。\n建议：%s</string>
+    <string name="status_face_out_of_bounds">状态：人脸位置超出画面，请正对摄像头后重试。</string>
+    <string name="status_photo_decode_failed">状态：照片解码失败，请重试。\n原因：%s</string>
+    <string name="status_capture_failed">状态：拍照失败，%s</string>
+    <string name="status_embedding_failed">状态：人脸特征提取失败，请重试。\n原因：%s</string>
+    <string name="status_detect_failed">状态：人脸检测失败，%s</string>
+    <string name="status_model_not_ready">状态：FaceNet 模型未加载成功，暂时无法录入或识别。</string>
+    <string name="status_profiles_cleared">状态：已清空本地人脸库。识别记录仍保留。</string>
+    <string name="status_records_cleared">状态：已清空识别记录。人脸库仍保留。</string>
+    <string name="status_summary_generated">状态：测试摘要已生成，可在设置与材料页截图或复制到报告。</string>
+    <string name="status_delete_empty">状态：人脸库为空，没有可删除的人员。</string>
+    <string name="status_deleted">状态：已删除 %s。</string>
+
+    <!-- Toast messages -->
+    <string name="toast_profiles_cleared">人脸库已清空</string>
+    <string name="toast_records_cleared">识别记录已清空</string>
+    <string name="toast_deleted">已删除 %s</string>
+    <string name="toast_summary_copied">测试摘要已复制</string>
+    <string name="toast_full_report_copied">完整报告素材已复制</string>
+    <string name="toast_live_requires_profiles">请先录入人员，再开启视频多人识别</string>
+    <string name="toast_profiles_sanitized">已修复本地人脸库：移除 %1$d 组异常特征，清理 %2$d 个无效人员。</string>
+    <string name="clip_test_summary_label">人脸识别测试摘要</string>
+    <string name="clip_full_report_label">人脸识别完整报告素材</string>
+
+    <!-- Confirm dialogs -->
+    <string name="dialog_cancel">取消</string>
+    <string name="dialog_delete_person_title">删除人员？</string>
+    <string name="dialog_delete_person_message">将删除“%s”的本地人脸特征。识别记录不会被删除。</string>
+    <string name="dialog_delete_person_confirm">删除</string>
+    <string name="dialog_clear_profiles_title">清空人脸库？</string>
+    <string name="dialog_clear_profiles_message">将删除所有已录入人员的人脸特征。识别记录仍会保留。</string>
+    <string name="dialog_clear_profiles_confirm">清空人脸库</string>
+    <string name="dialog_clear_records_title">清空识别记录？</string>
+    <string name="dialog_clear_records_message">将删除所有识别记录，但不会删除已录入人员。</string>
+    <string name="dialog_clear_records_confirm">清空记录</string>
+
+    <!-- Library summary -->
+    <string name="library_summary">已录入 %1$d 人｜%2$s\n演示状态：%4$s\n本机阈值：%3$s</string>
+    <string name="library_empty">暂无人员</string>
+
+    <!-- Liveness strings -->
+    <string name="liveness_switch_label">开启活体检测</string>
+    <string name="liveness_prompt_blink">请眨眨眼 (步骤 %1$d/%2$d)</string>
+    <string name="liveness_prompt_turn_left">请向左转头 (步骤 %1$d/%2$d)</string>
+    <string name="liveness_prompt_turn_right">请向右转头 (步骤 %1$d/%2$d)</string>
+    <string name="liveness_prompt_face_straight">请摆正脸部 (步骤 %1$d/%2$d)</string>
+    <string name="liveness_status_passed">状态：活体检测通过！正在完成处理…</string>
+    <string name="liveness_status_failed">状态：活体检测失败（超时或动作不匹配），请重试。</string>
+    <string name="liveness_status_checking">状态：活体检测中，剩 %d 秒</string>
+    <string name="liveness_status_mismatch">状态：请确保只有一个人在画面内，且正对摄像头开始。</string>
+</resources>
+

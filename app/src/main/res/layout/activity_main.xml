@@ -1,0 +1,1908 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen">
+
+    <ScrollView
+    android:id="@+id/mainScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background"
+    android:clipToPadding="false"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <LinearLayout
+            android:id="@+id/mainHeaderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_face_scan" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titleText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/title_main"
+                    android:textColor="@color/text_primary"
+                    android:textSize="22sp"
+                    tools:text="人脸识别演示台" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/subtitle_main"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+	            </LinearLayout>
+
+            <Button
+                android:id="@+id/settingsButton"
+                style="@style/QuietButton"
+                android:layout_width="92dp"
+	                android:layout_height="44dp"
+	                android:layout_marginStart="10dp"
+	                android:drawableStart="@android:drawable/ic_menu_manage"
+	                android:drawablePadding="4dp"
+	                android:insetBottom="0dp"
+	                android:insetTop="0dp"
+                android:text="@string/btn_open_settings"
+                android:textSize="12sp" />
+
+	        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/demoFlowCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="1dp"
+            app:strokeColor="@color/border_default"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="6dp"
+                android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/bg_step_active_circle"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/text_on_primary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="录入"
+                            android:textColor="@color/teal_dark"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+                        <TextView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/bg_step_idle_circle"
+                            android:gravity="center"
+                            android:text="2"
+                            android:textColor="@color/brand_primary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="识别"
+                            android:textColor="@color/brand_primary"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+                        <TextView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/bg_step_idle_circle"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textColor="@color/brand_primary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="直播"
+                            android:textColor="@color/brand_primary"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="4dp">
+                        <TextView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/bg_step_idle_circle"
+                            android:gravity="center"
+                            android:text="4"
+                            android:textColor="@color/brand_primary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="报告"
+                            android:textColor="@color/brand_primary"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/librarySummaryText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/status_background"
+            android:drawableStart="@android:drawable/ic_menu_info_details"
+            android:drawablePadding="8dp"
+            android:lineSpacingExtra="3dp"
+            android:padding="12dp"
+            android:text="@string/library_summary_default"
+            android:textColor="@color/status_info_text"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+	        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cameraCard"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="#000000"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/border_strong"
+            app:strokeWidth="1dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.camera.view.PreviewView
+                    android:id="@+id/previewView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#000000"
+                    app:scaleType="fillCenter" />
+
+                <com.example.facerecognitionfinal.ui.FaceOverlayView
+                    android:id="@+id/faceOverlayView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.example.facerecognitionfinal.ui.ParticleOverlayView
+                    android:id="@+id/particleOverlayView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <!-- Confidence ring as camera overlay -->
+                <com.example.facerecognitionfinal.ui.ConfidenceRingView
+                    android:id="@+id/confidenceRingView"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="40dp"
+                    android:visibility="gone" />
+
+                <!-- Floating status overlay -->
+                <TextView
+                    android:id="@+id/cameraStatusOverlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="8dp"
+                    android:background="#CC000000"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:padding="10dp"
+                    android:text="@string/status_default"
+                    android:textColor="#EEEEEE"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="2dp" />
+
+                <TextView
+                    android:id="@+id/fpsCounterText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:layout_margin="8dp"
+                    android:background="#88000000"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:text="-- FPS"
+                    android:textColor="#88FF88"
+                    android:textSize="10sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/cameraGuideText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/camera_overlay_background"
+                    android:lineSpacingExtra="2dp"
+                    android:padding="10dp"
+                    android:text="@string/camera_guide"
+                    android:textColor="@color/text_on_primary"
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+
+                <!-- Countdown overlay -->
+                <TextView
+                    android:id="@+id/countdownText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="3"
+                    android:textColor="#FFFFFF"
+                    android:textSize="80sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="8" />
+
+                <!-- Emotion emoji display -->
+                <TextView
+                    android:id="@+id/emotionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|start"
+                    android:layout_margin="40dp"
+                    android:text="😊"
+                    android:textSize="36sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/actionCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp"
+            app:strokeColor="@color/border_default"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <!-- Next step guide (compact) -->
+                <TextView
+                    android:id="@+id/nextStepText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_card_accent"
+                    android:lineSpacingExtra="2dp"
+                    android:padding="8dp"
+                    android:text="@string/next_step_default"
+                    android:textColor="@color/text_primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <!-- Name input row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="姓名:"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/nameInput"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="@string/hint_name"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:paddingHorizontal="10dp"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/livenessSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="活体"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        app:useMaterialThemeColors="true" />
+                </LinearLayout>
+
+                <!-- Action buttons row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/enrollButton"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/cute_action_enroll"
+                        android:drawableTop="@drawable/ic_camera_plus"
+                        android:drawablePadding="2dp"
+                        android:gravity="center"
+                        android:insetBottom="0dp"
+                        android:insetTop="0dp"
+                        android:paddingHorizontal="4dp"
+                        android:text="@string/btn_enroll"
+                        android:textColor="@color/teal_dark"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/recognizeButton"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/cute_action_recognize"
+                        android:drawableTop="@drawable/ic_scan_check"
+                        android:drawablePadding="2dp"
+                        android:gravity="center"
+                        android:insetBottom="0dp"
+                        android:insetTop="0dp"
+                        android:paddingHorizontal="4dp"
+                        android:text="@string/btn_recognize"
+                        android:textColor="@color/brand_primary"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/liveRecognitionButton"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/cute_action_live"
+                        android:drawableTop="@drawable/ic_live_grid"
+                        android:drawablePadding="2dp"
+                        android:gravity="center"
+                        android:insetBottom="0dp"
+                        android:insetTop="0dp"
+                        android:paddingHorizontal="4dp"
+                        android:text="@string/btn_live_recognition"
+                        android:textColor="@color/cute_lilac_dark"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/verifyButton"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#FFF0E0"
+                        android:drawableTop="@drawable/ic_scan_check"
+                        android:drawablePadding="2dp"
+                        android:gravity="center"
+                        android:insetBottom="0dp"
+                        android:insetTop="0dp"
+                        android:paddingHorizontal="4dp"
+                        android:text="🔐 验证"
+                        android:textColor="#B8600A"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <!-- Notes & auto-capture row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/notesInput"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="备注(可选)"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:paddingHorizontal="8dp"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted"
+                        android:textSize="12sp" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/autoCaptureSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="自动"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="10sp"
+                        app:useMaterialThemeColors="true" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <HorizontalScrollView
+            android:id="@+id/faceThumbnailScroll"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/faceThumbnailStrip"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp" />
+        </HorizontalScrollView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/statusCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+	            app:cardBackgroundColor="@color/cute_yellow"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp"
+            app:strokeColor="@color/border_default"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_step_idle_circle"
+                        android:gravity="center"
+                        android:text="✓"
+                        android:textColor="@color/brand_secondary"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/section_status"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_status_pill"
+                        android:text="待机中"
+                        android:textColor="@color/teal_dark"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/statusText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_result_inner"
+                    android:lineSpacingExtra="4dp"
+                    android:minLines="2"
+                    android:padding="12dp"
+                    android:text="@string/status_default"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/qualityCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp"
+            app:strokeColor="@color/border_default"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="人脸预处理与质量评估"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="实时人脸灰度直方图均衡预处理与多维质量评估评分。"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!-- Preprocessed Face Thumbnail Container -->
+                    <FrameLayout
+                        android:layout_width="86dp"
+                        android:layout_height="86dp"
+                        android:background="@drawable/edit_text_background"
+                        android:padding="3dp">
+
+                        <ImageView
+                            android:id="@+id/preprocessedFaceImage"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:scaleType="centerCrop"
+                            android:background="#172033"
+                            android:contentDescription="预处理人脸" />
+                    </FrameLayout>
+
+                    <!-- Quality Metrics Bars -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <!-- Brightness -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="亮度 (Luminance)"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp" />
+                            <TextView
+                                android:id="@+id/qualityLumaText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="--"
+                                android:textColor="@color/text_primary"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                        <ProgressBar
+                            android:id="@+id/qualityLumaBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="8dp"
+                            android:max="255"
+                            android:progress="0" />
+
+                        <!-- Sharpness -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="清晰度 (Sharpness)"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp" />
+                            <TextView
+                                android:id="@+id/qualitySharpnessText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="--"
+                                android:textColor="@color/text_primary"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                        <ProgressBar
+                            android:id="@+id/qualitySharpnessBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="8dp"
+                            android:max="30"
+                            android:progress="0" />
+
+                        <!-- Symmetry -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="光照对称 (Symmetry)"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp" />
+                            <TextView
+                                android:id="@+id/qualitySymmetryText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="--"
+                                android:textColor="@color/text_primary"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                        <ProgressBar
+                            android:id="@+id/qualitySymmetryBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="8dp"
+                            android:max="100"
+                            android:progress="0" />
+
+                        <!-- Head Pose Alignment -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="姿态偏角 (Pose Deviation)"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp" />
+                            <TextView
+                                android:id="@+id/qualityPoseText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="--"
+                                android:textColor="@color/text_primary"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                        <ProgressBar
+                            android:id="@+id/qualityPoseBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="4dp"
+                            android:layout_marginTop="3dp"
+                            android:max="45"
+                            android:progress="0" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_card_accent"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/qualityScoreText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="得分: --"
+                        android:textColor="@color/brand_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/qualitySuggestionText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:text="请进入相机取景范围以开始质量检测。"
+                        android:textColor="@color/text_primary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/nebulaCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp"
+            app:strokeColor="@color/border_default"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="人脸特征空间星云图"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/nebulaModeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_status_pill"
+                        android:text="特征力导向投影"
+                        android:textColor="@color/brand_primary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="物理间距与128维特征向量的L2距离成正比。相同人员会自动聚拢成散点簇。"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <com.example.facerecognitionfinal.ui.FeatureNebulaView
+                    android:id="@+id/featureNebulaView"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="12dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>
+
+    <ScrollView
+        android:id="@+id/settingsScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/screen_background"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <LinearLayout
+                android:id="@+id/settingsHeaderLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/title_settings"
+                        android:textColor="@color/text_primary"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/subtitle_settings"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/backToMainButton"
+                style="@style/SecondaryButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:drawableStart="@android:drawable/ic_media_previous"
+                android:drawablePadding="8dp"
+                android:insetBottom="0dp"
+                android:insetTop="0dp"
+                android:text="@string/btn_back_to_main"
+                android:textSize="13sp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/modeCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/border_default"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/section_mode"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/recognitionModeGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/localModeRadio"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:minHeight="48dp"
+                            android:text="@string/mode_local"
+                            android:textColor="@color/text_primary"
+                            android:textSize="13sp" />
+
+                        <RadioButton
+                            android:id="@+id/cloudModeRadio"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:minHeight="48dp"
+                            android:text="@string/mode_cloud"
+                            android:textColor="@color/text_primary"
+                            android:textSize="13sp" />
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/cloudConfigLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:background="@drawable/flow_background"
+                            android:lineSpacingExtra="3dp"
+                            android:padding="10dp"
+                            android:text="@string/cloud_config_hint"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp" />
+
+                        <RadioGroup
+                            android:id="@+id/cloudProviderGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/facePlusModeRadio"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:minHeight="48dp"
+                                android:text="@string/cloud_provider_facepp"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioButton
+                                android:id="@+id/comprefaceModeRadio"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:minHeight="48dp"
+                                android:text="@string/cloud_provider_compreface"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+                        </RadioGroup>
+
+                        <EditText
+                            android:id="@+id/cloudBaseUrlInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@drawable/edit_text_background"
+                            android:hint="@string/cloud_base_url_hint"
+                            android:imeOptions="actionNext"
+                            android:inputType="textUri"
+                            android:maxLines="1"
+                            android:paddingHorizontal="12dp"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_muted"
+                            android:textSize="13sp" />
+
+                        <EditText
+                            android:id="@+id/cloudApiKeyInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/edit_text_background"
+                            android:hint="@string/cloud_api_key_hint"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:paddingHorizontal="12dp"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_muted"
+                            android:textSize="13sp" />
+
+                        <EditText
+                            android:id="@+id/cloudApiSecretInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/edit_text_background"
+                            android:hint="@string/cloud_api_secret_hint"
+                            android:imeOptions="actionNext"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:paddingHorizontal="12dp"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_muted"
+                            android:textSize="13sp" />
+
+                        <EditText
+                            android:id="@+id/cloudFaceSetInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/edit_text_background"
+                            android:hint="@string/cloud_faceset_hint"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingHorizontal="12dp"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_muted"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:id="@+id/cloudTestButton"
+                            style="@style/QuietButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="8dp"
+                            android:drawableStart="@android:drawable/ic_menu_manage"
+                            android:drawablePadding="8dp"
+                            android:insetBottom="0dp"
+                            android:insetTop="0dp"
+                            android:text="@string/btn_cloud_test"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/cloudConnectionStatusText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/status_background"
+                            android:lineSpacingExtra="3dp"
+                            android:padding="10dp"
+                            android:text="@string/cloud_connection_status_default"
+                            android:textColor="@color/status_info_text"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/toolsCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/border_default"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🔧 实用工具"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="考勤签到模式"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/attendanceSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="开启后，每次识别成功自动记录考勤签到。"
+                        android:textColor="@color/text_muted"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/galleryRecognizeButton"
+                        style="@style/SecondaryButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableStart="@android:drawable/ic_menu_gallery"
+                        android:drawablePadding="8dp"
+                        android:text="从相册选取照片进行识别"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/showcaseButton"
+                        style="@style/SecondaryButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="6dp"
+                        android:drawableStart="@android:drawable/ic_menu_slideshow"
+                        android:drawablePadding="8dp"
+                        android:text="🎬 自动演示向导 (TTS引导)"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/compareFacesButton"
+                        style="@style/QuietButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_marginTop="4dp"
+                        android:text="🔁 A/B人脸对比 (前2人)"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/benchmarkButton"
+                        style="@style/SecondaryButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="4dp"
+                        android:drawableStart="@android:drawable/ic_menu_agenda"
+                        android:drawablePadding="8dp"
+                        android:text="🎯 精度基准自测 (Leave-One-Out)"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/matrixButton"
+                        style="@style/QuietButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_marginTop="4dp"
+                        android:text="📊 相似度矩阵 (所有人员)"
+                        android:textSize="11sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/exportDbButton"
+                            style="@style/QuietButton"
+                            android:layout_width="0dp"
+                            android:layout_height="38dp"
+                            android:layout_weight="1"
+                            android:text="💾 导出库"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/importDbButton"
+                            style="@style/QuietButton"
+                            android:layout_width="0dp"
+                            android:layout_height="38dp"
+                            android:layout_marginStart="6dp"
+                            android:layout_weight="1"
+                            android:text="📥 导入库"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/batchEnrollButton"
+                            style="@style/QuietButton"
+                            android:layout_width="0dp"
+                            android:layout_height="38dp"
+                            android:layout_marginStart="6dp"
+                            android:layout_weight="1"
+                            android:text="📸 连拍"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/exportAttendanceButton"
+                        style="@style/QuietButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="6dp"
+                        android:text="导出考勤记录 (CSV)"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/analyticsCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/border_default"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📊 识别分析"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <com.example.facerecognitionfinal.ui.AnalyticsPieView
+                        android:id="@+id/analyticsPieView"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="8dp" />
+
+                    <com.example.facerecognitionfinal.ui.AnalyticsBarView
+                        android:id="@+id/analyticsBarView"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/calibrationCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/border_default"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="特征分类阈值自适应调校"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="调节L2阈值以平衡识别安全度（误识率）与易用度（拒识率）。"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                    <com.example.facerecognitionfinal.ui.ThresholdCalibrationView
+                        android:id="@+id/thresholdCalibrationView"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/calibrationThresholdText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="当前L2阈值: 10.0"
+                            android:textColor="@color/text_primary"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/calibrationEerText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="推荐EER阈值: 计算中"
+                            android:textColor="@color/brand_primary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <SeekBar
+                        android:id="@+id/thresholdSeekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:max="120"
+                        android:progress="60"
+                        android:paddingHorizontal="0dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="误识率 (FAR)"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp" />
+                            <TextView
+                                android:id="@+id/calibrationFarText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="0.0%"
+                                android:textColor="@color/danger_dark"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="拒识率 (FRR)"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp" />
+                            <TextView
+                                android:id="@+id/calibrationFrrText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="0.0%"
+                                android:textColor="@color/teal_dark"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="系统推荐 / 状态"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp" />
+                            <TextView
+                                android:id="@+id/calibrationStatusText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="安全平衡"
+                                android:textColor="@color/brand_secondary"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/applyEerButton"
+                        style="@style/QuietButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="10dp"
+                        android:insetBottom="0dp"
+                        android:insetTop="0dp"
+                        android:text="应用最佳 EER 阈值"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/vectorIndexCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/border_default"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="高维特征空间检索索引 (VP-Tree)"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="基于胡开尔度量的 Vantage Point Metric Tree，规避大量无关样本计算。"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="索引库大小"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp" />
+                            <TextView
+                                android:id="@+id/indexSizeText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="0 个特征"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="比对次数 (线性 vs 树)"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp" />
+                            <TextView
+                                android:id="@+id/indexComparisonsText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="0 vs 0"
+                                android:textColor="@color/brand_primary"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="检索耗时"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp" />
+                            <TextView
+                                android:id="@+id/indexLatencyText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="0.0 ms"
+                                android:textColor="@color/teal_dark"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_card_accent"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/indexSavingsText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="计算开销节省: 0%"
+                            android:textColor="@color/brand_secondary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/indexRouteText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="检索路径路由: 等待检索..."
+                            android:textColor="@color/text_primary"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/recordsCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/border_default"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/section_records"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/section_records_hint"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/testSummaryButton"
+                        style="@style/QuietButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableStart="@android:drawable/ic_menu_agenda"
+                        android:drawablePadding="8dp"
+                        android:insetBottom="0dp"
+                        android:insetTop="0dp"
+                        android:text="@string/btn_test_summary"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/copySummaryButton"
+                        style="@style/QuietButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:drawableStart="@android:drawable/ic_menu_edit"
+                        android:drawablePadding="8dp"
+                        android:insetBottom="0dp"
+                        android:insetTop="0dp"
+                        android:text="@string/btn_copy_summary"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/exportHtmlButton"
+                        style="@style/SecondaryButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:drawableStart="@android:drawable/ic_menu_share"
+                        android:drawablePadding="8dp"
+                        android:insetBottom="0dp"
+                        android:insetTop="0dp"
+                        android:text="导出 HTML 报告"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/summaryText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/result_background"
+                        android:lineSpacingExtra="4dp"
+                        android:padding="12dp"
+                        android:text="@string/summary_empty"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/recordsSearchInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="🔍 搜索姓名/状态..."
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:paddingHorizontal="10dp"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_muted"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/recordsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingExtra="4dp"
+                        android:text="@string/records_empty"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/managementCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/border_default"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/section_management"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/section_management_hint"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp" />
+
+                    <Spinner
+                        android:id="@+id/personSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/edit_text_background" />
+
+                    <Button
+                        android:id="@+id/deletePersonButton"
+                        style="@style/DangerButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:drawableStart="@android:drawable/ic_menu_delete"
+                        android:drawablePadding="8dp"
+                        android:insetBottom="0dp"
+                        android:insetTop="0dp"
+                        android:text="@string/btn_delete_person"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="🏷️ 分组标签"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/groupSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/edit_text_background" />
+
+                    <Button
+                        android:id="@+id/applyGroupButton"
+                        style="@style/QuietButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="4dp"
+                        android:text="应用分组到选中人员"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/filterGroupButton"
+                        style="@style/QuietButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="4dp"
+                        android:text="按分组筛选缩略图"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/clearRecordsButton"
+                        style="@style/QuietButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:insetBottom="0dp"
+                        android:insetTop="0dp"
+                        android:text="@string/btn_clear_records"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/clearProfilesButton"
+                        style="@style/DangerButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:insetBottom="0dp"
+                        android:insetTop="0dp"
+                        android:text="@string/btn_clear_profiles"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/fullScreenLiveLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/fullScreenPreviewView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            app:scaleType="fillCenter" />
+
+        <com.example.facerecognitionfinal.ui.FaceOverlayView
+            android:id="@+id/fullScreenFaceOverlayView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/fullScreenLiveTitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_margin="16dp"
+            android:background="@drawable/camera_overlay_background"
+            android:lineSpacingExtra="3dp"
+            android:maxLines="3"
+            android:padding="12dp"
+            android:text="@string/fullscreen_live_title"
+            android:textColor="@color/text_on_primary"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/fullScreenLivePanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="16dp"
+            android:background="@drawable/camera_overlay_background"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:paddingBottom="14dp">
+
+            <TextView
+                android:id="@+id/fullScreenLiveResultText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:maxLines="8"
+                android:text="@string/fullscreen_live_result_default"
+                android:textColor="@color/text_on_primary"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/fullScreenLiveExitButton"
+                style="@style/QuietButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:insetBottom="0dp"
+                android:insetTop="0dp"
+                android:text="@string/btn_live_fullscreen_exit"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>
