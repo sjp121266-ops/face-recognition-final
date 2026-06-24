@@ -1274,7 +1274,8 @@ class MainActivity : AppCompatActivity() {
             yawDegrees = face.headEulerAngleY,
             rollDegrees = face.headEulerAngleZ,
             leftEyeOpenProb = face.leftEyeOpenProbability,
-            rightEyeOpenProb = face.rightEyeOpenProbability
+            rightEyeOpenProb = face.rightEyeOpenProbability,
+            pitchDegrees = face.headEulerAngleX
         )
 
         val livenessContours = face.allContours.map { contour ->

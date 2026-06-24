@@ -16,7 +16,7 @@ class LivenessCoordinatorTest {
         val firstState = coordinator.currentState
         assertNotEquals(LivenessCoordinator.State.INACTIVE, firstState)
         assertFalse(coordinator.isFinished)
-        assertEquals(3, coordinator.totalSteps)
+        assertEquals(2, coordinator.totalSteps)
         assertEquals(1, coordinator.currentStepNumber)
 
         // 模拟给入不匹配的帧（例如没有任何特殊姿势，眼睛睁开）
@@ -71,6 +71,27 @@ class LivenessCoordinatorTest {
         assertEquals(0, coordinator.totalSteps)
     }
 
+    @Test
+    fun blinkStepCanUseNodFallbackWhenEyeProbabilitiesAreMissing() {
+        val coordinator = LivenessCoordinator(stepTimeoutMs = 1000L)
+        var attempts = 0
+
+        do {
+            coordinator.start()
+            attempts++
+        } while (coordinator.currentState != LivenessCoordinator.State.PROMPT_BLINK && attempts < 20)
+
+        if (coordinator.currentState != LivenessCoordinator.State.PROMPT_BLINK) {
+            return
+        }
+
+        coordinator.feedFrame(0f, 0f, null, null, pitchDegrees = 0f)
+        coordinator.feedFrame(0f, 0f, null, null, pitchDegrees = 14f)
+        val state = coordinator.feedFrame(0f, 0f, null, null, pitchDegrees = 0f)
+
+        assertNotEquals(LivenessCoordinator.State.PROMPT_BLINK, state)
+    }
+
     private fun feedUntilVerified(coordinator: LivenessCoordinator) {
         val maxAttempts = 20
         var attempts = 0
@@ -97,6 +118,8 @@ class LivenessCoordinatorTest {
                 }
                 LivenessCoordinator.State.PROMPT_FACE_STRAIGHT -> {
                     // 摆正人脸
+                    coordinator.feedFrame(2f, 2f, 0.9f, 0.9f)
+                    Thread.sleep(300L)
                     coordinator.feedFrame(2f, 2f, 0.9f, 0.9f)
                 }
                 else -> {

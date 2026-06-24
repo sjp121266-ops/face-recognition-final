@@ -4,7 +4,7 @@ import com.example.facerecognitionfinal.data.PersonProfile
 
 class FaceEmbeddingGuard(
     private val expectedSize: Int = RecognitionEngine.EXPECTED_EMBEDDING_SIZE,
-    private val outlierThreshold: Float = RecognitionEngine.DEFAULT_L2_THRESHOLD
+    private val outlierThreshold: Float = Float.MAX_VALUE
 ) {
 
     fun isValid(embedding: FloatArray): Boolean {

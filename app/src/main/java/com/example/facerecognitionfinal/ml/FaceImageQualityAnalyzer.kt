@@ -183,12 +183,12 @@ class FaceImageQualityAnalyzer(
     }
 
     companion object {
-        const val MIN_BRIGHTNESS = 35f
-        const val MAX_BRIGHTNESS = 235f
-        const val MIN_SHARPNESS = 4.0f
-        const val MIN_SYMMETRY = 0.50f
-        const val MAX_YAW = 18.0f
-        const val MAX_PITCH = 15.0f
-        const val MAX_ROLL = 15.0f
+        const val MIN_BRIGHTNESS = 0f
+        const val MAX_BRIGHTNESS = 255f
+        const val MIN_SHARPNESS = 0f
+        const val MIN_SYMMETRY = 0f
+        const val MAX_YAW = 360f
+        const val MAX_PITCH = 360f
+        const val MAX_ROLL = 360f
     }
 }

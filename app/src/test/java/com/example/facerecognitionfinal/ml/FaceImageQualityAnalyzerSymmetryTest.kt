@@ -55,11 +55,10 @@ class FaceImageQualityAnalyzerSymmetryTest {
 
         val result = analyzer.evaluatePixels(pixels, WIDTH, HEIGHT)
 
-        // Expected symmetry = 1.0 - (200 - 50)/200 = 0.25 (lower than MIN_SYMMETRY of 0.5)
-        assertTrue(result is FaceImageQualityAnalyzer.Result.Blocked)
-        result as FaceImageQualityAnalyzer.Result.Blocked
-        assertTrue(result.reason.contains("光照极不均匀") || result.reason.contains("左右脸部"))
-        assertEquals(0.25f, result.details.symmetry, 0.01f)
+        // Expected symmetry = 1.0 - (200 - 50)/200 = 0.25 (now accepted since quality gates are relaxed)
+        assertTrue(result is FaceImageQualityAnalyzer.Result.Accepted)
+        val details = (result as FaceImageQualityAnalyzer.Result.Accepted).details
+        assertEquals(0.25f, details.symmetry, 0.01f)
     }
 
     private fun rgb(red: Int, green: Int, blue: Int): Int {

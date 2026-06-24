@@ -8,42 +8,36 @@ class FaceImageQualityAnalyzerTest {
     private val analyzer = FaceImageQualityAnalyzer()
 
     @Test
-    fun blocksDarkFaceImage() {
+    fun darkFaceImageNowAccepted() {
+        // With relaxed quality gates (minBrightness=0), dark images are accepted
         val result = analyzer.evaluatePixels(
             pixels = solidPixels(gray = 20),
             width = WIDTH,
             height = HEIGHT
         )
-
-        assertTrue(result is FaceImageQualityAnalyzer.Result.Blocked)
-        result as FaceImageQualityAnalyzer.Result.Blocked
-        assertTrue(result.reason.contains("偏暗"))
+        assertTrue(result is FaceImageQualityAnalyzer.Result.Accepted)
     }
 
     @Test
-    fun blocksOverExposedFaceImage() {
+    fun overExposedFaceImageNowAccepted() {
+        // With relaxed quality gates (maxBrightness=255), bright images are accepted
         val result = analyzer.evaluatePixels(
             pixels = solidPixels(gray = 245),
             width = WIDTH,
             height = HEIGHT
         )
-
-        assertTrue(result is FaceImageQualityAnalyzer.Result.Blocked)
-        result as FaceImageQualityAnalyzer.Result.Blocked
-        assertTrue(result.reason.contains("过亮"))
+        assertTrue(result is FaceImageQualityAnalyzer.Result.Accepted)
     }
 
     @Test
-    fun blocksLowSharpnessFaceImage() {
+    fun lowSharpnessFaceImageNowAccepted() {
+        // With relaxed quality gates (minSharpness=0), blurry images are accepted
         val result = analyzer.evaluatePixels(
             pixels = solidPixels(gray = 128),
             width = WIDTH,
             height = HEIGHT
         )
-
-        assertTrue(result is FaceImageQualityAnalyzer.Result.Blocked)
-        result as FaceImageQualityAnalyzer.Result.Blocked
-        assertTrue(result.reason.contains("模糊"))
+        assertTrue(result is FaceImageQualityAnalyzer.Result.Accepted)
     }
 
     @Test

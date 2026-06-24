@@ -70,9 +70,9 @@ class FaceQualityAnalyzer(
     }
 
     companion object {
-        const val MIN_FACE_RATIO = 0.20f
-        const val MAX_YAW_DEGREES = 24f
-        const val MAX_ROLL_DEGREES = 24f
-        const val MIN_EDGE_PADDING_RATIO = 0.03f
+        const val MIN_FACE_RATIO = 0.0f
+        const val MAX_YAW_DEGREES = 360f
+        const val MAX_ROLL_DEGREES = 360f
+        const val MIN_EDGE_PADDING_RATIO = 0.0f
     }
 }

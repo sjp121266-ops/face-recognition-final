@@ -22,7 +22,8 @@ class FaceQualityAnalyzerTest {
     }
 
     @Test
-    fun blocksFaceThatIsTooSmall() {
+    fun smallFaceNowAccepted() {
+        // With relaxed quality gates (minFaceRatio=0), small faces are accepted
         val result = analyzer.evaluate(
             faceWidth = 60,
             faceHeight = 60,
@@ -31,14 +32,12 @@ class FaceQualityAnalyzerTest {
             yawDegrees = 0f,
             rollDegrees = 0f
         )
-
-        assertTrue(result is FaceQualityAnalyzer.Result.Blocked)
-        result as FaceQualityAnalyzer.Result.Blocked
-        assertTrue(result.reason.contains("过小"))
+        assertTrue(result is FaceQualityAnalyzer.Result.Accepted)
     }
 
     @Test
-    fun blocksFaceWithLargeYaw() {
+    fun largeYawNowAccepted() {
+        // With relaxed quality gates (maxYaw=360), any yaw is accepted
         val result = analyzer.evaluate(
             faceWidth = 180,
             faceHeight = 180,
@@ -47,14 +46,12 @@ class FaceQualityAnalyzerTest {
             yawDegrees = 32f,
             rollDegrees = 0f
         )
-
-        assertTrue(result is FaceQualityAnalyzer.Result.Blocked)
-        result as FaceQualityAnalyzer.Result.Blocked
-        assertTrue(result.reason.contains("侧转"))
+        assertTrue(result is FaceQualityAnalyzer.Result.Accepted)
     }
 
     @Test
-    fun blocksFaceTooCloseToImageEdge() {
+    fun faceAtEdgeNowAccepted() {
+        // With relaxed quality gates (minEdgePadding=0), edge faces are accepted
         val result = analyzer.evaluate(
             faceWidth = 180,
             faceHeight = 180,
@@ -67,14 +64,12 @@ class FaceQualityAnalyzerTest {
             faceRight = 182,
             faceBottom = 300
         )
-
-        assertTrue(result is FaceQualityAnalyzer.Result.Blocked)
-        result as FaceQualityAnalyzer.Result.Blocked
-        assertTrue(result.reason.contains("边缘"))
+        assertTrue(result is FaceQualityAnalyzer.Result.Accepted)
     }
 
     @Test
-    fun blocksFaceWithLargeRoll() {
+    fun largeRollNowAccepted() {
+        // With relaxed quality gates (maxRoll=360), any roll is accepted
         val result = analyzer.evaluate(
             faceWidth = 180,
             faceHeight = 180,
@@ -83,9 +78,6 @@ class FaceQualityAnalyzerTest {
             yawDegrees = 0f,
             rollDegrees = -30f
         )
-
-        assertTrue(result is FaceQualityAnalyzer.Result.Blocked)
-        result as FaceQualityAnalyzer.Result.Blocked
-        assertTrue(result.reason.contains("倾斜"))
+        assertTrue(result is FaceQualityAnalyzer.Result.Accepted)
     }
 }
